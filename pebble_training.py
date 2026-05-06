@@ -86,7 +86,7 @@ def train_pebble_reacher(
 
     for t in range(1, total_steps + 1):
         action = pebble_agent.select_action(obs)
-        next_obs, gt_reward, terminated, truncated = env.step(action)
+        next_obs, gt_reward, terminated, truncated,_ = env.step(action)
         done = terminated or truncated
 
         pebble_agent.store(obs, next_obs, action, gt_reward, terminated, truncated)
